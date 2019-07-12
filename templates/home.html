@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+	<title>{{ tt }}</title>
+	{% else %}
+	<title>Hey</title>
+	{% endif %}
+</head>
+<body>
+<center><p>Welcome Home</p></center>
+{% if info %}
+	<p> {{info['main']['temp_min']}}</p>
+{% else %}
+<form action="/" method="POST">
+	<input type="text" name="city" placeholder="enter city here...">
+	<p>Kelvin: </p><input type="radio" name="units" value="kelvin">
+	<p>Metric: </p><input type="radio" name="units" value="metric">
+	<p>Imperial: </p><input type="radio" name="units" value="imperial">
+	<input type="submit" value="Get Info">
+</form>
+{% endif %}
+</body>
+</html>
